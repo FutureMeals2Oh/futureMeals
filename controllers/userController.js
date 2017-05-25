@@ -20,12 +20,12 @@ userController.verifyUser = (req, res, next) => {
     }).then((result) => {
       if (result === []) {
         res.status(400).send('no username found');
-        return;
       } else {
-
+        console.log('bcrypt compare')
         bcrypt.compare(password, result[0].dataValues.password).then((isSame) => {
           if (isSame) {
             req.body.id = result[0].dataValues.id;
+            res.status(200);
             next();
             // res.status(200).send('password matches');
           } else {
@@ -47,12 +47,10 @@ userController.checkIfUsernameExists = (req, res, next) => {
       username: username
     }
   }).then((err, users) => {
-
     if (err)
       next();
     }
   );
-
 };
 
 // POST REQUEST FROM SIGNUP (CONTINUED):

@@ -18,7 +18,7 @@ class Signup extends Component {
             <input placeholder="Create Password" type="password" name="password" value={this.props.password} onChange={this.props.handleChange} />
             <br/>
             <br/>
-            <button><Link id="signupLink" to="/search" onClick={this.props.handleSignUpSubmit}>Signup</Link></button>
+            <Link id="signupLink" to="/search" onClick={this.props.handleSignUpSubmit}>Signup</Link>
           </div>
         </form>
       </div>

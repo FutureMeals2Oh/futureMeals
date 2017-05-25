@@ -30,7 +30,7 @@ class Login extends Component {
             />
             <br/>
             <br/>
-            <button><Link id="loginLink" to="/search" onClick={this.props.handleLoginSubmit}>Login</Link></button>
+            <Link id="loginLink" to="/search" onClick={this.props.handleLoginSubmit}>Login</Link>
           </div>
         </form>
         <br/>
